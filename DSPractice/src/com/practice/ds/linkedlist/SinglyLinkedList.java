@@ -31,6 +31,18 @@ public class SinglyLinkedList<T> {
 		incrementCounter();
 	}
 
+	public void addStart(T element) {
+		Node<T> newNode = new Node<T>(element);
+		if (head == null) {
+			head = newNode;
+			tail = newNode;
+		} else {
+			newNode.setNext(head);
+			head = newNode;
+		}
+		incrementCounter();
+	}
+
 	// Add after a given element
 	public void addAfter(T element, T after) {
 
@@ -60,11 +72,8 @@ public class SinglyLinkedList<T> {
 	}
 
 	// inserts the specified element at the specified position in this list
-	public void addAtIndex(T element, int index) {
-		if (index <= 0 || index > size()) {
-			System.out.println("Invalid index");
-			return;
-		} else if (index > counter) {
+	public void addAtIndex(T element, int position) {
+		if (position <= 0 || position > size()) {
 			System.out.println("Invalid index");
 			return;
 		} else {
@@ -72,7 +81,7 @@ public class SinglyLinkedList<T> {
 			Node<T> cursorNode = head;
 
 			if (cursorNode != null) {
-				for (int i = 2; i < index && cursorNode.getNext() != null; i++) {
+				for (int i = 2; i < position && cursorNode.getNext() != null; i++) {
 					cursorNode = cursorNode.getNext();
 				}
 			}
@@ -183,4 +192,5 @@ public class SinglyLinkedList<T> {
 	public int size() {
 		return getCounter();
 	}
+
 }

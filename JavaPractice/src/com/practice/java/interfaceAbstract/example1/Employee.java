@@ -38,10 +38,10 @@ public abstract class Employee {
 
     public abstract double getPay();
 
-    @Override
-    public String toString() {
-        return String.format("Employee{id=%d, name='%s', hireDate=%s}", id, name, hireDate);
-    }
+//    @Override
+//    public String toString() {
+//        return String.format("Employee{id=%d, name='%s', hireDate=%s}", id, name, hireDate);
+//    }
 
     @Override
     public boolean equals(Object o) {

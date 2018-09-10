@@ -3,7 +3,9 @@ package com.practice.ds.linkedlist;
 public class MainClass {
 	public static void main(String args[]){
 		SinglyLinkedList<Integer> sl = new SinglyLinkedList<Integer>();
-		
+
+        sl.addStart(25);
+        
 		//Add to the end of the list
 		sl.addEnd(10);
 		sl.addEnd(3);
@@ -12,6 +14,11 @@ public class MainClass {
         sl.addEnd(29);
         sl.addEnd(13);
         
+        sl.traverse();
+
+        sl.addStart(29);
+        
+
         sl.traverse();
         
         //Add after an element in the list

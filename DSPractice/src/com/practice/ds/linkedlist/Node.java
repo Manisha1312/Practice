@@ -9,8 +9,7 @@ class Node<T> implements Comparable<T> {
 	private Node<T> next;
 
 	public Node(T dataValue) {
-		this.next = null;
-		this.data = dataValue;
+		this(dataValue,null);
 	}
 	
 	public Node(T dataValue, Node<T> nextValue) {
