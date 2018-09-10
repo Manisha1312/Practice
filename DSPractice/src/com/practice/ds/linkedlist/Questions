@@ -1,0 +1,21 @@
+- Insert in front of linked list
+- Insert at the end 
+- Insert after a specified element
+- Insert before a specified element
+- Insert after a given index
+
+- Remove from front
+- Remove from end
+- Remove after a specified element
+- Remove after a given index
+- Remove before a specified elemnet
+
+- Get an element from an index
+- Middle element of a list
+- find Loop in a list
+- Find nth element from the end of the list
+- Reverse a list
+-Find smallest and largest element
+
+- Doubly linked list implementation simple insert and delete
+- Circular linked list implementation simple insert and delete
