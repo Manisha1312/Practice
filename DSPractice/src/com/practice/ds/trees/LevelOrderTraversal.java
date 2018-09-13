@@ -14,6 +14,14 @@ public class LevelOrderTraversal {
 		root.left.left.left = new TreeNode(23);
 		root.right.left = new TreeNode(43);
 
+//		System.out.println("In Order Traversal :");
+//		TreeNode.inOrder(root);
+//		
+//		System.out.println("pre Order Traversal :");
+//		TreeNode.preOrder(root);
+		
+		
+		
 		System.out.println("Level Order Traversal :");
 		levelOrderTraversal(root);
 		
@@ -33,20 +41,26 @@ public class LevelOrderTraversal {
 	}
 
 	private static void levelOrderTraversal(TreeNode root) {
-		UsingQueue(root);
+	//UsingQueue(root);
 		Recursively(root);
 	}
 	
 	private static void Recursively(TreeNode root) {
 		int h = TreeNode.height(root);
-		for (int i = h; i >= 1; i--) {
+//		for (int i = h; i >= 1; i--) {
+//			printlevelnodes(root, i);
+//			System.out.println("");
+//		}
+		
+		for (int i = 1; i <= h ; i++) {
 			printlevelnodes(root, i);
 			System.out.println("");
 		}
+		
 	}
 
 	private static void UsingQueue(TreeNode root) {
-		Queue<TreeNode> q = new LinkedList<TreeNode>();
+		Queue<TreeNode> q = new LinkedList<>();
 		q.add(root);
 		while (!q.isEmpty()) {
 			TreeNode temp = q.remove();
@@ -114,6 +128,18 @@ public class LevelOrderTraversal {
 		}
 	}
 
+//	private static void printlevelnodes(TreeNode root, int level) {
+//		if (root == null)
+//			return;
+//		if (level == 1)
+//			System.out.print(" " + root.data);
+//		else {
+//			level--;
+//			printlevelnodes(root.left, level);
+//			printlevelnodes(root.right, level);
+//		}
+//	}
+	
 	private static void printlevelnodes(TreeNode root, int level) {
 		if (root == null)
 			return;
@@ -121,8 +147,8 @@ public class LevelOrderTraversal {
 			System.out.print(" " + root.data);
 		else {
 			level--;
-			printlevelnodes(root.left, level);
 			printlevelnodes(root.right, level);
+			printlevelnodes(root.left, level);
 		}
 	}
 }
